@@ -366,7 +366,7 @@
             width: 100%;
             flex-shrink: 0;
             object-fit: cover;
-            height: 250px; 
+            height: 350px; 
             cursor: pointer;
         }
         .carousel-btn {
@@ -421,6 +421,16 @@
         .oculto { display: none !important; }
         
         .music-btn svg { fill: #ff1493 !important; stroke: none; }
+        /* --- EFECTO FLOTANTE PARA IMÁGENES PNG --- */
+@keyframes flotar {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); } /* Sube 12 píxeles */
+    100% { transform: translateY(0px); }
+}
+
+.efecto-flotante {
+    animation: flotar 3.5s ease-in-out infinite;
+}
 
         /* ========================================================
            ADAPTACIÓN EXCLUSIVA PARA CELULARES
@@ -446,6 +456,7 @@
             .img-box[src="imagen2.png"] { max-width: 60vw !important; } 
             .img-box[src="imagen3.png"] { max-width: 40vw !important; }
             .img-box[src="imagen8.png"] { max-width: 45vw !important; }
+
         }
     </style>
 </head>
@@ -491,7 +502,7 @@
 
         <div class="seccion">
             <img src="imagen2.png" class="img-box img-bottom-right" style="display: block; width: 3000px; margin-top: -20px; margin-right: -20px;" alt="" onerror="this.style.display='none'">
-            <img src="imagen19.png" class="img-box img-top-right" style="display: block; width: 90px; margin-top: -20px; margin-left: -20px;" alt="" onerror="this.style.display='none'">
+            <img src="imagen19.png" class="img-box img-top-right efecto-flotante" style="display: block; width: 90px; margin-top: -20px; margin-left: -20px;" alt="" onerror="this.style.display='none'">
             <h2 class="titulo-seccion">SÁBADO</h2>
             <h3 class="titulo-seccion" style="margin-top: 0;">4 DE NOVIEMBRE</h3>
 
@@ -521,20 +532,18 @@
         </div>
 
         <div class="seccion" id="modulo-vestimenta">
-            <img src="imagen4.png" class="img-box img-top-left" style="display: block; width: 100px; margin-top: -20px; margin-left: -20px;" alt="" onerror="this.style.display='none'">
+           <img src="" class="img-box img-top-left" style="display: block; width: 100px; margin-top: -20px; margin-left: -20px;" alt= "" onerror="this.style.display='none'">
             <h2 class="titulo-seccion">CÓDIGO DE<br> VESTIMENTA</h2>
-            <p class="texto-normal" style="margin-bottom: 30px;">Semi-Formal</p>
-            <p class="texto-normal" style="margin-bottom: 20px;">Reservado el</p>
-            <h3 class="texto-dorado" style="font-size: var(--tamano-dorados); letter-spacing: 1px; text-align: center; margin: 0 0 5px 0;">COLOR BLANCO</h3>
-            <p class="texto-normal" style="margin-top: 0;">para mi vestimenta</p>
+            <p class="texto-normal" style="margin-bottom: 30px;">SEMIFORMAL</p>
+            <p class="texto-normal" style="margin-bottom: 20px;">Reservado el color blanco para mi vestimenta</p>
+         
         </div>
 
         <div class="seccion">
             <img src="" class="img-box img-bottom-left" style="display: block; width: 70px; margin-top: -20px; margin-right: -20px; transform: scaleX(-1);" alt="" onerror="this.style.display='none'">
             <img src="imagen55.png" class="img-box" style="display: block; width: 250px; top: -40px; left: 50%; transform: translateX(-50%) scaleX(-1);" alt="" onerror="this.style.display='none'">
             <h2 class="titulo-seccion">CONFIRMÁ<BR>TU ASISTENCIA</h2>
-            <p class="texto-normal">Para que todo<br> sea perfecto,<br>confirma asistencia<br> antes del</p>
-            <h3 class="texto-limpio" style="font-size: 1.5rem; margin: 25px 0; text-align: center;">31 de octubre</h3>
+            <p class="texto-normal">Para que todo sea perfecto,<br>confirma tu asistencia antes<br> del 30 DE OCTUBRE</p>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSf10jQDYVwCGk4tXHHgnTVK8_wadqwscZsIT1wPPJFvYgfV1w/viewform?usp=publish-editor" target="_blank" class="btn-dorado">SÍ ASISTIRÉ</a>
         </div>
 
@@ -542,7 +551,7 @@
             <img src="imagen6.png" class="img-box img-bottom-right" style="display: block; width: 100px; margin-bottom: -20px; margin-right: -10px;" alt="" onerror="this.style.display='none'">
             <h2 class="titulo-seccion">REGALOS</h2>
             <p class="texto-normal" style="margin-bottom: 35px;">
-                El mejor regalo<br> es tu presencia,<br> pero si deseas tener<br> un detalle conmigo,<br> puedes hacerlo aquí:
+                El mejor regalo es tu presencia, pero si deseas tener un detalle conmigo, puedes hacerlo aquí:
             </p>
             <button onclick="mostrarDatosBancarios()" class="btn-dorado">VER DATOS BANCARIOS</button>
             <div id="caja-banco" class="datos-bancarios">
@@ -555,8 +564,9 @@
         </div>
 
         <div class="seccion" id="modulo-musica">
-            <h2 class="titulo-seccion">SUGERIR MÚSICA</h2>
-            <p class="texto-normal">Ayúdame con la música<br> que no puede faltar.</p>
+            <img src="imagen4.png" class="img-box img-top-right efecto-flotante" style="display: block; width: 100px; margin-top: -20px; margin-left: -20px;" alt= "" onerror="this.style.display='none'">
+            <h2 class="titulo-seccion">PLAYLIST</h2>
+            <p class="texto-normal">¡Ayudame a armar la playlist! Contame qué tema no puede faltar.</p>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSchvvje-vmJBGQUeX20WmNDzdsaOZlVaaJcbbzY4vdQFZ-FRA/viewform?usp=publish-editor" target="_blank" class="btn-dorado">SUGERIR CANCIÓN</a>
         </div>
 
@@ -607,6 +617,13 @@
                     <img src="foto3.jpg" alt="Galeria" class="img-ampliable" onerror="this.remove()">
                     <img src="foto4.jpg" alt="Galeria" class="img-ampliable" onerror="this.remove()">
                     <img src="foto5.jpg" alt="Galeria" class="img-ampliable" onerror="this.remove()">
+                    <img src="foto6.jpg" alt="Galeria" class="img-ampliable" onerror="this.remove()">
+                    <img src="foto7.jpg" alt="Galeria" class="img-ampliable" onerror="this.remove()">
+                    <img src="foto8.jpg" alt="Galeria" class="img-ampliable" onerror="this.remove()">
+                    <img src="foto9.jpg" alt="Galeria" class="img-ampliable" onerror="this.remove()">
+                    <img src="foto10.jpg" alt="Galeria" class="img-ampliable" onerror="this.remove()">
+                    <img src="foto11.jpg" alt="Galeria" class="img-ampliable" onerror="this.remove()">
+                    <img src="foto12.jpg" alt="Galeria" class="img-ampliable" onerror="this.remove()">
                 </div>
                 <button class="carousel-btn prev" id="btn-prev">&#10094;</button>
                 <button class="carousel-btn next" id="btn-next">&#10095;</button>
@@ -614,11 +631,11 @@
         </div>
 
         <div class="seccion seccion-final" style="text-align: center; margin-top: 20px;">
-            <img src="imagen19.png" class="img-box img-top-right" style="display: block; width: 80px; margin-top: -35px; margin-left: -20px;" alt="" onerror="this.style.display='none'">
-            <img src="descarga.png" class="img-box img-bottom-left" style="display: block; width: 100px; margin-top: -20px; margin-left: -20px;" alt="" onerror="this.style.display='none'">
+            <img src="imagen19.png" class="img-box img-top-right efecto-flotante" style="display: block; width: 80px; margin-top: -35px; margin-left: -20px;" alt="" onerror="this.style.display='none'">
+            <img src="descarga.png" class="img-box img-bottom-left" style="display: block; width: 110px; margin-top: -20px; margin-left: -20px;" alt="" onerror="this.style.display='none'">
             <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="img-box img-bottom-right" style="display: block; width: 140px; margin-top: -20px; margin-right: -50px; transform: scaleX(-1);" alt="" onerror="this.style.display='none'">
 
-            <p class="texto-normal">  Tu presencia<br>es muy<br> importante<br>para mí! </p>
+            <p class="texto-normal">  Tu presencia<br>es muy importante<br>para mí! </p>
             <h2 class="titulo-despedida">¡NO<br> FALTES!</h2>
         </div>
 
@@ -636,7 +653,7 @@
         const MOSTRAR_SUGERIR_MUSICA = true;
         const MOSTRAR_ALBUM_FOTOS = false;
         const MOSTRAR_INSTAGRAM = false;
-        const MOSTRAR_GALERIA = true;   // Grid normal
+        const MOSTRAR_GALERIA = false;   // Grid normal
         const MOSTRAR_CARRUSEL = true;  // Nuevo carrusel deslizante
 
         if (!MOSTRAR_VESTIMENTA) document.getElementById('modulo-vestimenta').classList.add('oculto');
